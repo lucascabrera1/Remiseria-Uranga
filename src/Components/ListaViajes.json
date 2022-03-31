@@ -1,0 +1,131 @@
+[
+    {
+      "id": 1,
+       "localidad de origen": "Coronel Bogado",
+       "localidad de destino": "Rosario",
+       "horario de salida": "05:45",
+       "horario de llegada": "07:15",
+       "lista de pasajeros":  [ 
+           {
+                "nombre y apellido" : "Lucas Gabriel Cabrera",
+                "direccion de origen" : "Belgrano 321",
+                "telefono" : "0340215415206",
+                "dirección de destino" : "Rioja 1845"
+           },
+           {
+                "nombre y apellido" : "Valeria Ines Cabrera",
+                "direccion de origen" : "Eleuterio Varela sin numero",
+                "telefono" : "0340215658497",
+                "dirección de destino" : "Cordoba y Corrientes"
+           },
+           {
+                "nombre y apellido" : "Elias Bresciani",
+                "direccion de origen" : "Salta 311",
+                "telefono" : "035646456456",
+                "dirección de destino" : "Santa Fe 1545"
+            },
+            {
+                "nombre y apellido" : "Jhonatan Zoppi",
+                "direccion de origen" : "Moreno 365",
+                "telefono" : "034023425435",
+                "dirección de destino" : "Mitre y Pasco"
+            }
+        ]
+    }
+    ,
+    {
+        "id": 2,
+        "localidad de origen": "Coronel Bogado",
+        "localidad de destino": "Rosario",
+        "horario de salida": "07:45",
+        "horario de llegada": "09:15",
+        "lista de pasajeros":  [ 
+            {
+                "nombre y apellido": "Barde Vassman",
+                "direccion de origen": "5 Corry Court",
+                "direccion de destino": "20338 Butternut Avenue",
+                "telefono": "552 466 2579"
+              }, {
+                "nombre y apellido": "Pauletta Laytham",
+                "direccion de origen": "3753 Darwin Point",
+                "direccion de destino": "7 Vahlen Park",
+                "telefono": "189 194 6121"
+              }, {
+                "nombre y apellido": "Helene Scrowton",
+                "direccion de origen": "957 Northfield Point",
+                "direccion de destino": "495 Marquette Drive",
+                "telefono": "833 119 5408"
+              }, {
+                "nombre y apellido": "Ninette Mowsdill",
+                "direccion de origen": "71 Sundown Point",
+                "direccion de destino": "61917 Laurel Center",
+                "telefono": "576 418 2800"
+              }
+         ]
+     }
+     ,
+     {
+       "id":3,
+        "localidad de origen": "Coronel Bogado",
+        "localidad de destino": "Rosario",
+        "horario de salida": "09:45",
+        "horario de llegada": "11:15",
+        "lista de pasajeros":  [{
+            "nombre y apellido": "Sharyl Fernier",
+            "direccion de origen": "8828 Schlimgen Alley",
+            "direccion de destino": "3074 Elgar Way",
+            "telefono": "671 464 9602"
+          }
+          ,
+          {
+            "nombre y apellido": "Marni Maxwell",
+            "direccion de origen": "73102 Clarendon Pass",
+            "direccion de destino": "68579 Dovetail Circle",
+            "telefono": "327 589 5807"
+          }
+          , 
+          {
+            "nombre y apellido": "Morley Scothorn",
+            "direccion de origen": "08 Scofield Pass",
+            "direccion de destino": "80391 Anzinger Alley",
+            "telefono": "699 794 9799"
+          }
+          , 
+          {
+            "nombre y apellido": "Rollin Abrami",
+            "direccion de origen": "53572 Vidon Alley",
+            "direccion de destino": "940 Hayes Court",
+            "telefono": "309 513 0041"
+          }
+        ]
+     },
+     {
+        "id":4,
+         "localidad de origen": "Coronel Bogado",
+         "localidad de destino": "Rosario",
+         "horario de salida": "11:45",
+         "horario de llegada": "13:15",
+         "lista de pasajeros":  [{
+            "nombre y apellido": "Chad Bisson",
+            "direccion de origen": "93470 Roxbury Terrace",
+            "direccion de destino": "15429 Hayes Crossing",
+            "telefono": "782 972 4029"
+          }, {
+            "nombre y apellido": "Konstantin Russo",
+            "direccion de origen": "738 John Wall Drive",
+            "direccion de destino": "709 Farwell Plaza",
+            "telefono": "645 303 4058"
+          }, {
+            "nombre y apellido": "Jaime Klus",
+            "direccion de origen": "8769 Bluejay Park",
+            "direccion de destino": "4 Thierer Hill",
+            "telefono": "626 198 5781"
+          }, {
+            "nombre y apellido": "Matteo Santorini",
+            "direccion de origen": "727 Dahle Crossing",
+            "direccion de destino": "9211 Melvin Terrace",
+            "telefono": "770 975 8299"
+          }
+        ]
+      }
+]

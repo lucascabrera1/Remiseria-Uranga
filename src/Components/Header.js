@@ -10,7 +10,7 @@ const Header = (props) => {
     <header className='Header'>
       <title>Remiseria Uranga</title>
       <h1>Remiseria Uranga</h1>
-      <Button color = 'green' text = 'agregar un nuevo viaje'/>
+      <Button color = 'red' text = 'agregar un nuevo viaje'/>
       <div><h2>{administrador}</h2></div>
       <p>pasajero: {props.pasajero}</p>
       <p>origen: {props.origen}</p>
