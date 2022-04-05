@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import Button from './Button'
 
-const administrador = "Soy Jorge Gomez, Administrador oficial de la remiseria de uranga"
+const administrador = "Usted es atendido por Jorge Gomez, administrador oficial de la empresa Remiseria Uranga"
 const bola = false
 
 const Header = (props) => {
@@ -21,7 +21,7 @@ const Header = (props) => {
 }
 
 Header.defaultProps = {
-    pasajero : "Matias Ricci"
+    pasajero : ""
 }
   
 Header.propTypes = {

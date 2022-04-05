@@ -1,20 +1,26 @@
 import logo from './logo.svg';
-import './App.css';
-import Header from './Components/Header';
-import Viajes from '../src/Components/ListaViajes.json'
+import './App.css'
+import Header from './Components/Header'
+import Viajes from './Components/Viajes'
+import ListaViajes from './Components/ListaViajes.json'
+import React, {Component} from 'react';
 
-function App() {
-  const propiedadesprops = {
-    "pasajero" : "Lucas Gabriel Cabrera", 
-    "origen" : "Rioja 1845",
-    "destino" : "Belgrano 321" 
-  }
+
+class App extends  Component {
   
-  return (
-    <div className="App">
-      <Header {...propiedadesprops}/>
-    </div>
-  );
+  state = {viajes : ListaViajes}
+
+  render(){
+  
+    
+    return (
+      <div className="App">
+        <Header />
+        <Viajes viajes = {this.state.viajes} />
+      </div>
+    );
+  }
 }
+  
 
 export default App;
