@@ -1,30 +1,14 @@
-import React, {Component} from "react"
+import React, {Component, useState} from "react"
 import listaViajes from '../Components/ListaViajes.json'
 import Viaje from './Viaje'
 
 console.log(listaViajes)
 
+
 class Viajes extends Component{
     state ={
         viajes : listaViajes
     }
-
-    render_consulta() {
-        let filas;
-        if (this.state.viajes.length > 0){
-            filas = this.state.viajes.map( viaje => {
-                viaje["lista de pasajeros"].map( pasajero => {
-                    pasajero["nombre y apellido"],
-                    pasajero["telefono"],
-                    pasajero["direccion de origen"],
-                    pasajero["direccion de destino"]
-                })
-            })
-            return filas
-        }
-        else return ("No se encontraron pasajeros")
-    }
-
     
     render() {
         return this.props.viajes.map(viaje => <Viaje viaje = {viaje} key={viaje.id} />) //recorro el arreglo viajes

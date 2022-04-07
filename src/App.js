@@ -12,10 +12,15 @@ class App extends  Component {
 
   render(){
   
+    const propiedadesprops = {
+      "pasajero": "julian julianb",
+      "origen" : "italia 123",
+      "destino" : "san juan 998"
+    }
     
     return (
       <div className="App">
-        <Header />
+        <Header {...propiedadesprops}/>
         <Viajes viajes = {this.state.viajes} />
       </div>
     );

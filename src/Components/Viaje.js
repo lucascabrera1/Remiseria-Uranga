@@ -1,31 +1,44 @@
 import React, {Component} from "react"
 import './estilos.css'
+import BotonAgregarPasajero from "./BotonAgregarPasajero"
 
 class Viaje extends Component {
+    
     render(){
+        var cantidad = this.props.viaje["lista de pasajeros"].length
+        const filas = this.props.viaje["lista de pasajeros"].map( pasajero => {
+            return (
+                <>
+                    <tr key={pasajero["telefono"]}>
+                    <td>{pasajero["nombre y apellido"]}</td>
+                    <td>{pasajero["telefono"]}</td>
+                    <td>{pasajero["direccion de origen"]}</td>
+                    <td>{pasajero["direccion de destino"]}</td></tr>
+                </>
+            )
+        })
+
         return <div>
-            <ul >
-                <li>Id Viaje {this.props.viaje.id}</li> 
-                <li>Localidad de origen {this.props.viaje["localidad de origen"]}</li>
-                <li>Localidad de destino {this.props.viaje["localidad de destino"]}</li>
-                <li>Horario de salida {this.props.viaje["horario de salida"]}</li>
-                <li>Horario de llegada {this.props.viaje["horario de llegada"]}</li>
+            <h1 id="idv">Viaje {this.props.viaje.id}</h1>
+            <ul>
+                <li>Id Viaje: {this.props.viaje.id}</li> 
+                <li>Localidad de origen: {this.props.viaje["localidad de origen"]}</li>
+                <li>Localidad de destino: {this.props.viaje["localidad de destino"]}</li>
+                <li>Horario de salida: {this.props.viaje["horario de salida"]}</li>
+                <li>Horario de llegada: {this.props.viaje["horario de llegada"]}</li>
             </ul>
-            <p>Lista de pasajeros</p>
+            <p id = 'titlp'>Lista de pasajeros</p>
             <table>
-                <thead>
-                    <th>Nombre y Apellido</th>
-                    <th>Telefono</th>
-                    <th>Dirección de origen</th>
-                    <th>Dirección de destino</th>
-                </thead>
-                <tbody>
-                    <td>{this.props.viaje["lista de pasajeros"]["nombre y apellido"]}</td>
-                    <td>{this.props.viaje["lista de pasajeros"].telefono }</td>
-                    <td>{this.props.viaje["lista de pasajeros"]["direccion de origen"]}</td>
-                    <td>{this.props.viaje["lista de pasajeros"]["direccion de destino"]}</td>
-                </tbody>
+                <tr>
+                    <th><strong>Nombre y apellido</strong></th>
+                    <th><strong>Teléfono</strong></th>
+                    <th><strong>Direccion de origen</strong></th>
+                    <th><strong>Direccion de destino</strong></th>
+                </tr>
+                {filas}
             </table>
+            <br/> <br/>
+            <BotonAgregarPasajero cantidad = {cantidad} />
         </div>
     }
 }

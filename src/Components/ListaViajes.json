@@ -16,7 +16,7 @@
                 "nombre y apellido" : "Valeria Ines Cabrera",
                 "direccion de origen" : "Eleuterio Varela sin numero",
                 "telefono" : "0340215658497",
-                "dirección de destino" : "Cordoba y Corrientes"
+                "direccion de destino" : "Cordoba y Corrientes"
            },
            {
                 "nombre y apellido" : "Elias Bresciani",
@@ -125,6 +125,20 @@
             "direccion de origen": "727 Dahle Crossing",
             "direccion de destino": "9211 Melvin Terrace",
             "telefono": "770 975 8299"
+          }
+        ]
+      },
+      {
+        "id":5,
+         "localidad de origen": "Coronel Bogado",
+         "localidad de destino": "Rosario",
+         "horario de salida": "11:45",
+         "horario de llegada": "13:15",
+         "lista de pasajeros":  [{
+            "nombre y apellido": "Chad Bisson",
+            "direccion de origen": "93470 Roxbury Terrace",
+            "direccion de destino": "15429 Hayes Crossing",
+            "telefono": "782 972 4029"
           }
         ]
       }
