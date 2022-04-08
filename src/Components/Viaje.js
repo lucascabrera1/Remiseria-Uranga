@@ -24,11 +24,11 @@ class Viaje extends Component {
     confirmar(pasajero) {
         
         this.setState(prevState => {
+            const newLista = prevState.listapasajeros.concat(pasajero);
             return {
-                listapasajeros: prevState.listapasajeros.push(pasajero)
+                listapasajeros: newLista
             }   
         })
-        console.log(pasajero);
     }
     
     render(){

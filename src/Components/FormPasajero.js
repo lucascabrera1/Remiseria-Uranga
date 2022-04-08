@@ -12,7 +12,6 @@ class FormPasajero extends Component{
         this.setState({
             "nombre y apellido": document.getElementById("txtNombreApellido").value
         })
-        console.log(this.state);
     }
 
     render (){
