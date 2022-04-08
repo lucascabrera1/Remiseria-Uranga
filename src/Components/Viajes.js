@@ -1,4 +1,4 @@
-import React, {Component, useState} from "react"
+import React, {Component} from "react"
 import listaViajes from '../Components/ListaViajes.json'
 import Viaje from './Viaje'
 
@@ -6,9 +6,9 @@ console.log(listaViajes)
 
 
 class Viajes extends Component{
-    state ={
+    /*state ={
         viajes : listaViajes
-    }
+    }*/
     
     render() {
         return this.props.viajes.map(viaje => <Viaje viaje = {viaje} key={viaje.id} />) //recorro el arreglo viajes

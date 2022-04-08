@@ -1,12 +1,39 @@
 import React, {Component} from "react"
 import './estilos.css'
 import BotonAgregarPasajero from "./BotonAgregarPasajero"
+import FormPasajero from "./FormPasajero";
 
 class Viaje extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            //cantidad : props.viaje["lista de pasajeros"].length,
+            listapasajeros: props.viaje["lista de pasajeros"],
+            agregarpasajero : false
+        };
+        
+    }
+
+    agregarPasajero() {
+        this.setState({
+            agregarpasajero: true
+        });
+    }
+
+    confirmar(pasajero) {
+        
+        this.setState(prevState => {
+            return {
+                listapasajeros: prevState.listapasajeros.push(pasajero)
+            }   
+        })
+        console.log(pasajero);
+    }
     
     render(){
-        var cantidad = this.props.viaje["lista de pasajeros"].length
-        const filas = this.props.viaje["lista de pasajeros"].map( pasajero => {
+        //var cantidad = this.props.viaje["lista de pasajeros"].length
+        const filas = this.state.listapasajeros.map( pasajero => {
             return (
                 <>
                     <tr key={pasajero["telefono"]}>
@@ -17,7 +44,12 @@ class Viaje extends Component {
                 </>
             )
         })
-
+        let formPasajero = <></>;
+        if (this.state.agregarpasajero) {
+            formPasajero = <FormPasajero confirmar={this.confirmar.bind(this)}></FormPasajero>
+        }
+        
+        
         return <div>
             <h1 id="idv">Viaje {this.props.viaje.id}</h1>
             <ul>
@@ -38,7 +70,11 @@ class Viaje extends Component {
                 {filas}
             </table>
             <br/> <br/>
-            <BotonAgregarPasajero cantidad = {cantidad} />
+            {formPasajero}
+            <BotonAgregarPasajero 
+                cantidad = {this.state.listapasajeros.length} 
+                click = {this.agregarPasajero.bind(this)}
+            />
         </div>
     }
 }

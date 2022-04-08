@@ -3,20 +3,16 @@ import './estilos.css'
 
 class BotonAgregarPasajero extends Component {
 
-    constructor (props) {
+    /*constructor (props) {
         super(props);
-    }
+    }*/
 
     render(){
 
        return  (this.props.cantidad < 4 ) 
-       ? <button id="btnAgregaPasajero" onClick={pintaralgo} >Agregar Pasajero</button> 
+       ? <button id="btnAgregaPasajero" onClick={this.props.click} >Agregar Pasajero</button> 
        : <p id="nolugar">Ya no quedan lugares disponibles en este viaje</p>
 
-       function pintaralgo () {
-             console.log("al menos entro a pintando algo")
-            return <p>pintando algo</p>
-        }
         
     }
 }
