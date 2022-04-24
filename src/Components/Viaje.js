@@ -21,15 +21,25 @@ class Viaje extends Component {
         });
     }
 
+    cancelarPasajero(){
+        this.setState({
+            agregarpasajero : false
+        });
+        console.log("entro al agregar pasajero y salio con el valor: " + this.state.agregarpasajero)
+    }
+
     confirmar(pasajero) {
         
         this.setState(prevState => {
             const newLista = prevState.listapasajeros.concat(pasajero);
             return {
-                listapasajeros: newLista
-            }   
+                listapasajeros: newLista,
+                agregarpasajero : false
+            }
         })
     }
+
+
     
     render(){
         //var cantidad = this.props.viaje["lista de pasajeros"].length
@@ -48,11 +58,10 @@ class Viaje extends Component {
         if (this.state.agregarpasajero) {
             formPasajero = <FormPasajero confirmar={this.confirmar.bind(this)}></FormPasajero>
         }
-        
-        
+       
         return <div>
             <h1 id="idv">Viaje {this.props.viaje.id}</h1>
-            <ul>
+            <ul key={this.props.viaje.id}>
                 <li>Id Viaje: {this.props.viaje.id}</li> 
                 <li>Localidad de origen: {this.props.viaje["localidad de origen"]}</li>
                 <li>Localidad de destino: {this.props.viaje["localidad de destino"]}</li>
