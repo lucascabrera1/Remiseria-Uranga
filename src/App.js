@@ -11,11 +11,12 @@ class App extends  Component {
 
   addViaje = (localidadorigen, localidaddestino, horariosalida, horariollegada) =>{
     const newviaje = {
-        id: this.state.viajes.length +5,
+        id: this.state.viajes.length +1,
         "localidad de origen" : localidadorigen ,
         "localidad de destino": localidaddestino,
         "horario de salida" : horariosalida ,
-        "horario de llegada": horariollegada 
+        "horario de llegada": horariollegada,
+        "lista de pasajeros" : []
     }
     this.setState({
         viajes : [...this.state.viajes, newviaje]
@@ -32,6 +33,7 @@ class App extends  Component {
 }
 
   render(){
+    console.log(this.state.viajes)
     return (
       <div className="App">
         <Header />

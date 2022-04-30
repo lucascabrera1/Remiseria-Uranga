@@ -45,18 +45,19 @@ class Viaje extends Component {
         //var cantidad = this.props.viaje["lista de pasajeros"].length
         const filas = this.state.listapasajeros.map( pasajero => {
             return (
-                <>
-                    <tr key={pasajero["telefono"]}>
-                    <td>{pasajero["nombre y apellido"]}</td>
-                    <td>{pasajero["telefono"]}</td>
-                    <td>{pasajero["direccion de origen"]}</td>
-                    <td>{pasajero["direccion de destino"]}</td></tr>
-                </>
+                <tr key={pasajero["telefono"]}>
+                <td>{pasajero["nombre y apellido"]}</td>
+                <td>{pasajero["telefono"]}</td>
+                <td>{pasajero["direccion de origen"]}</td>
+                <td>{pasajero["direccion de destino"]}</td></tr>
             )
         })
         let formPasajero = <></>;
         if (this.state.agregarpasajero) {
-            formPasajero = <FormPasajero confirmar={this.confirmar.bind(this)}></FormPasajero>
+            formPasajero = <FormPasajero 
+                confirmar={this.confirmar.bind(this)} 
+                cancelarPasajero = {this.cancelarPasajero.bind(this)}>
+            </FormPasajero>
         }
        
         return <div>
@@ -70,20 +71,25 @@ class Viaje extends Component {
             </ul>
             <p id = 'titlp'>Lista de pasajeros</p>
             <table>
-                <tr>
-                    <th><strong>Nombre y apellido</strong></th>
-                    <th><strong>Teléfono</strong></th>
-                    <th><strong>Direccion de origen</strong></th>
-                    <th><strong>Direccion de destino</strong></th>
-                </tr>
-                {filas}
+                <thead>
+                    <tr>
+                        <th><strong>Nombre y apellido</strong></th>
+                        <th><strong>Teléfono</strong></th>
+                        <th><strong>Direccion de origen</strong></th>
+                        <th><strong>Direccion de destino</strong></th>
+                    </tr>
+                </thead>
+                <tbody>{filas}</tbody>
             </table>
             <br/> <br/>
             {formPasajero}
+            {!this.state.agregarpasajero ? 
             <BotonAgregarPasajero 
                 cantidad = {this.state.listapasajeros.length} 
                 click = {this.agregarPasajero.bind(this)}
             />
+            :
+            <></>}
         </div>
     }
 }

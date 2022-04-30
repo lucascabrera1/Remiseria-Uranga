@@ -38,8 +38,10 @@ class FormViaje extends Component {
             this.state["horario de llegada"]
         )
         console.log('submitting segundo ...(onsubmit event)')
+        console.log(e)
         //console.log("localidad de destino " + this.state["localidad de destino"])
-        e.preventdefault();
+        this.setState({quiereagregar: false})
+        e.preventDefault();
     }
 
     render(){
@@ -77,12 +79,8 @@ class FormViaje extends Component {
                     value={this.state["localidad de destino"]}
                     onChange={this.onChangeDatosViaje.bind(this)}>
                 </input> <br/>
-                <button type="submit"
-                    onClick={e => {
-                        //e.preventDefault();
-                        this.onSubmit();
-                    }
-                    }>Confirmar
+                <button type="button"
+                    onClick={this.onSubmit}>Confirmar
                 </button>
                 <button 
                 onClick={e => {
