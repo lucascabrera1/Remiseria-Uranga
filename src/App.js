@@ -41,9 +41,9 @@ deleteViaje = (id) => {
 updateViaje = (id, localidadorigen, localidaddestino, horariosalida, horariollegada) => {
   const newList = this.state.viajes.map( viaje =>{
     if(viaje.id === id){
-        viaje['localidad de origen'] = localidadorigen ,
-        viaje['localidad de destino'] = localidaddestino,
-        viaje['horario de salida'] = horariosalida ,
+        viaje['localidad de origen'] = localidadorigen;
+        viaje['localidad de destino'] = localidaddestino;
+        viaje['horario de salida'] = horariosalida;
         viaje['horario de llegada']= horariollegada
     }
     return viaje;
