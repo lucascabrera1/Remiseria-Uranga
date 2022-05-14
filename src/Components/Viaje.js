@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import './estilos.css'
 import BotonAgregarPasajero from "./BotonAgregarPasajero"
 import FormPasajero from "./FormPasajero";
+import Viajes from "./Viajes";
 
 class Viaje extends Component {
 
@@ -38,8 +39,6 @@ class Viaje extends Component {
             }
         })
     }
-
-
     
     render(){
         //var cantidad = this.props.viaje["lista de pasajeros"].length
@@ -59,7 +58,6 @@ class Viaje extends Component {
                 cancelarPasajero = {this.cancelarPasajero.bind(this)}>
             </FormPasajero>
         }
-       
         return <div>
             <h1 id="idv">Viaje {this.props.viaje.id}</h1>
             <ul key={this.props.viaje.id}>
@@ -90,58 +88,12 @@ class Viaje extends Component {
             />
             :
             <></>}
+            <br/>
+            <br/>
+            <button >Modificar Viaje</button>
+            <button onClick={this.props.deleteViaje.bind(this, this.props.viaje.id)}>Eliminar Viaje</button>
         </div>
     }
 }
 
-
-
-
-
 export default Viaje
-
-/* class Viaje extends React.Component {
-    render () {
-        return <div>
-            LocalidadOrigen: {this.props.LocalidadOrigen}
-            LocalidadDestino: {this.props.LocalidadDestino}
-            HorarioSalida: {this.props.HorarioSalida}
-            HorarioLlegada: {this.props.HorarioLlegada}
-            ListaPasajeros : {
-                {NombreApellido : pasajero.NombreApellido} -
-                {DireccionOrigen : pasajero.DireccionOrigen} -
-                {DireccionDestino : pasajero.DireccionDestino} -
-                {Telefono : pasajero.Telefono}
-            }
-        </div>
-
-    }
-}*/
-
-/*const Viaje = ({viaje}) => {
-    return (
-        <table id='viajes'>
-            <th>Localidad de origen</th>
-            <th>Localidad de destino</th>
-            <th>Horario de salida</th>
-            <th>Horario de llegada</th>
-            <td>{viaje.LocalidadOrigen}</td>
-            <td>{viaje.LocalidadDestino}</td>
-            <td>{viaje.HorarioSalida}</td>
-            <td>{viaje.HorarioLlegada}</td>
-            {viaje.ListaPasajeros.map = (pasajero) => {
-            <table id='pasajeros'>
-                <th>Nombre y apellido</th>
-                <th>Direccion de origen</th>
-                <th>Direccion de destino</th>
-                <th>Telefono</th>
-                <td>{pasajero.NombreApellido}</td>
-                <td>{pasajero.DireccionOrigen}</td>
-                <td>{pasajero.DireccionDestino}</td>
-                <td>{pasajero.Telefono}</td>
-            </table>
-            }
-        }
-        </table>
-    )
-}*/

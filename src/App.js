@@ -4,6 +4,7 @@ import Header from './Components/Header'
 import Viajes from './Components/Viajes'
 import ListaViajes from './Components/ListaViajes.json'
 import FormViaje from './Components/FormViaje';
+import Viaje from './Components/Viaje';
 
 class App extends  Component {
 
@@ -32,12 +33,30 @@ class App extends  Component {
     console.log("horario de llegada " + horariollegada)
 }
 
+deleteViaje = (id) => {
+  const newList = this.state.viajes.filter(viaje => viaje.id !== id);
+  this.setState({viajes : newList})
+}
+
+updateViaje = (id, localidadorigen, localidaddestino, horariosalida, horariollegada) => {
+  const newList = this.state.viajes.map( viaje =>{
+    if(viaje.id === id){
+        viaje['localidad de origen'] = localidadorigen ,
+        viaje['localidad de destino'] = localidaddestino,
+        viaje['horario de salida'] = horariosalida ,
+        viaje['horario de llegada']= horariollegada
+    }
+    return viaje;
+  })
+  this.setState({viajes : newList})
+}
+
   render(){
     console.log(this.state.viajes)
     return (
       <div className="App">
         <Header />
-        <Viajes viajes = {this.state.viajes} /> <br/> <br/>
+        <Viajes viajes = {this.state.viajes} deleteViaje = {this.deleteViaje} /> <br/> <br/>
         <h1 color='blue'>Nuevo Viaje</h1>
         <FormViaje quiereagregar = {this.state.quiereagregar} addviaje = {this.addViaje}></FormViaje>
       </div>
